@@ -14,7 +14,7 @@
   "license": "GPL-3.0-or-later",
   "private": true,
   "dependencies": {
-	"express": "^4.17.3"
+	"express": "^4.17.3",
     "@angular/animations": "~13.0.0",
     "@angular/common": "~13.0.0",
     "@angular/compiler": "~13.0.0",
