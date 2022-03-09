@@ -14,7 +14,7 @@ export class LoggerService {
         this.prefix = _prefix;
     }
 
-  log(msg?: string, ...other: any[]) { console.log(this.prefix, msg, other); }
-  error(msg?: string, ...other: any[]) { console.error(this.prefix, msg, other); }
-  warn(msg?: string, ...other: any[]) { console.warn(this.prefix, msg, other); }
+  log(msg?: string, ...other: any[]) { console.log(this.prefix, msg, ...other); }
+  error(msg?: string, ...other: any[]) { console.error(this.prefix, msg, ...other); }
+  warn(msg?: string, ...other: any[]) { console.warn(this.prefix, msg, ...other); }
 }
