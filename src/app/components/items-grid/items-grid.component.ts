@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { ItemSchema } from 'src/app/itemschema';
 import { ItemService } from 'src/app/services/item.service';
+import { LoggerService } from 'src/app/services/logger.service';
 
 @Component({
 	selector: 'app-items-grid',
@@ -10,8 +11,12 @@ import { ItemService } from 'src/app/services/item.service';
 export class ItemsGridComponent implements OnInit 
 {
     items?: ItemSchema[];
+    @Output() selectedItem?: ItemSchema;
 
-	constructor(private itemService: ItemService) { }
+	constructor(
+        private itemService: ItemService,
+        private logger: LoggerService
+    ) { }
 
 	ngOnInit(): void 
 	{
@@ -20,4 +25,9 @@ export class ItemsGridComponent implements OnInit
         });
 	}
 
+    onClick(item: ItemSchema)
+    {
+        this.logger.log("Clicked: ", item.name);
+        this.selectedItem = item;
+    }
 }

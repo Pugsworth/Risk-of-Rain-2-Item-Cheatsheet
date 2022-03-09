@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ItemSchema } from 'src/app/itemschema';
 
 @Component({
 	selector: 'app-item-inspector',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemInspectorComponent implements OnInit 
 {
+    @Input() item?: ItemSchema;
 
 	constructor() { }
 
@@ -14,4 +16,8 @@ export class ItemInspectorComponent implements OnInit
 	{
 	}
 
+    setItem(_item: ItemSchema)
+    {
+        this.item = _item;
+    }
 }
