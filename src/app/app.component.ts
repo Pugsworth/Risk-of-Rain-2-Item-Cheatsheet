@@ -17,10 +17,11 @@ export class AppComponent implements OnInit
 
 	ngOnInit(): void
 	{
-        this.logger.setPrefix("AppComponent");
-        this.logger.log("Testing");
-        this.itemService.getItems().subscribe((items) => {
-            this.itemData = items;
-        });
+		this.logger.setPrefix("AppComponent");
+		this.logger.log("Testing");
+		this.itemService.getItems().subscribe((items) => 
+		{
+			this.itemData = items;
+		});
 	}
 }

@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { GridItemComponent } from './grid-item/grid-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BodyComponent } from './components/body/body.component';
+import { SearchFilterPipe } from './search-filter.pipe';
 
 @NgModule({
 	declarations: [
@@ -17,12 +18,13 @@ import { BodyComponent } from './components/body/body.component';
 		ItemInspectorComponent,
 		ItemFilterComponent,
 		HeaderComponent,
-  GridItemComponent,
-  BodyComponent
+		GridItemComponent,
+		BodyComponent,
+  SearchFilterPipe
 	],
 	imports: [
 		BrowserModule,
-        HttpClientModule
+		HttpClientModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

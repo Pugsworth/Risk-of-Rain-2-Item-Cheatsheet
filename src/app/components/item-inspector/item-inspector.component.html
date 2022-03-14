@@ -1,4 +1,17 @@
-<div class="container">
-    <span>{{ item!.name }}</span>
-    <span>{{ item!.data.description }}</span>
+<div class="container vertical-layout">
+    <div class="placeholder" *ngIf="!this.item">
+        <span>Click an item to see details!</span>
+    </div>
+    <div class="item" *ngIf="this.item">
+        <app-grid-item [item]="this.item"></app-grid-item>
+    </div>
+    <div class="item-details vertical-layout" *ngIf="this.item">
+        <div class="name t-center">
+            <h2>{{ item!.item.name }}</h2>
+        </div>
+        <div class="description t-center">{{ item!.item.data.description }}</div>
+        <div class="rarity t-center">{{ item!.item.data.rarity }}</div>
+        <div class="stackability t-center">{{ item!.item.data.stackability }}</div>
+        <div class="link t-center"><a href="{{ item!.item.metadata.wikiPage }}">Wiki Page</a></div>
+    </div>
 </div>

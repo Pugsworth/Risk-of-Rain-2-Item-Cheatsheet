@@ -1,0 +1,20 @@
+.container {
+    align-items: center;
+    padding: 1em;
+}
+
+.name {
+    text-align: center;
+}
+
+.description {
+    text-align: center;
+}
+
+.item-details {
+}
+
+.item {
+    width: 50%;
+    height: auto;
+}

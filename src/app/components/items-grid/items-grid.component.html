@@ -1,7 +1,11 @@
 <div class="container grid">
-    <app-grid-item
-        *ngFor="let item of items" [item]="item"
-        (click)="onClick(item);"
-        >
-    </app-grid-item>
+    <ng-container *ngFor="let item of items">
+        <app-grid-item
+            *ngIf="item.display"
+            [item]="item"
+            [ngClass]="{'selectedItem': item == this.selectedItem}"
+            (click)="onClick(item);"
+            >
+        </app-grid-item>
+    </ng-container>
 </div>

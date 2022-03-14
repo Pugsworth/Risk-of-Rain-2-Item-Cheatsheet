@@ -1,3 +1,11 @@
 <div class="container">
-    <p>item-filter works!</p>
+    <div class="left-side">
+        <button
+            *ngFor="let b of buttons"
+            class="rarity"
+            >{{ b }}</button>
+    </div>
+    <div class="right-side">
+        <input type="text" name="search" id="search" (keyup)="updateSearch($event);">
+    </div>
 </div>

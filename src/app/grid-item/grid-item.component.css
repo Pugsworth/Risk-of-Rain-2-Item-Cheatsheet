@@ -1,11 +1,21 @@
 .grid-item {
-    width: 80px;
-    height: 80px;
+    /* width: 80px; */
+    /* height: 80px; */
+    width: 100%;
+    height: 100%;
 }
 
 .grid-item:hover {
     display: block;
 }
+
+.grid-item:hover .item-name {
+    display: inline-block;
+}
+.item-name {
+    display: none;
+}
+
 
 .icon {
     width: 100%;

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as _ from 'lodash';
+import { ItemService } from 'src/app/services/item.service';
 
 @Component({
 	selector: 'app-item-filter',
@@ -7,11 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemFilterComponent implements OnInit 
 {
+	buttons = [
+		"Common",
+		"Uncommon",
+		"Legendary"
+	];
 
-	constructor() { }
+	doSearch!: (search: string) => void;
+
+	constructor(
+        private itemService: ItemService
+    ) { }
 
 	ngOnInit(): void 
 	{
+		this.doSearch = _.throttle((search: string) => 
+		{
+			console.log("Throttle Search", search);
+            this.itemService.filter.emit(search);
+		}, 200);
 	}
 
+	updateSearch(event: any)
+	{
+		let searchText: string = event.target.value;
+		this.doSearch(searchText);
+	}
 }

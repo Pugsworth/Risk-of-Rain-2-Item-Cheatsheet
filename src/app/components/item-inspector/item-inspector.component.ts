@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DisplayItem } from 'src/app/DisplayItem';
 import { ItemSchema } from 'src/app/itemschema';
+import { ItemService } from 'src/app/services/item.service';
 
 @Component({
 	selector: 'app-item-inspector',
@@ -8,16 +10,22 @@ import { ItemSchema } from 'src/app/itemschema';
 })
 export class ItemInspectorComponent implements OnInit 
 {
-    @Input() item?: ItemSchema;
+    @Input() item?: DisplayItem;
 
-	constructor() { }
+    constructor(
+        private itemService: ItemService
+    ) { }
 
-	ngOnInit(): void 
-	{
-	}
-
-    setItem(_item: ItemSchema)
+    ngOnInit(): void 
     {
-        this.item = _item;
+    	this.itemService.itemSelected.subscribe(_item => 
+    	{
+    		this.setItem(_item);
+    	});
+    }
+
+    setItem(_item: DisplayItem)
+    {
+    	this.item = _item;
     }
 }
