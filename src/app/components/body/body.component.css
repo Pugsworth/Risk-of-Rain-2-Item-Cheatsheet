@@ -8,6 +8,8 @@
 
 app-items-grid {
     flex: 3 1;
+    height: 80vh;
+    overflow: auto;
 }
 
 app-item-inspector {
