@@ -2,13 +2,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-content: stretch;
+    align-content: flex-start;
     align-items: center;
     flex-direction: row;
     /* grid-template-columns: repeat(auto-fill, 80px); */
     /* grid-template-rows: auto; */
-    gap: 1em;
-    justify-content: center;
+    gap: 0.25em;
 }
 
 app-grid-item {
@@ -18,8 +17,8 @@ app-grid-item {
 
 .selectedItem {
     border: 3px solid green;
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
 }
 
 .selectedItem .icon {
